@@ -1,31 +1,31 @@
-<div class="relative bg-black w-full h-full ">
-  <div class="absolute top-28 left-28">
-    <form class="w-32">
+<div class="relative bg-black w-full h-full">
+  <div class="absolute top-28 left-28 flex flex-row">
+    <form [formGroup]="juegoForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="">
         <mat-label>Nombre del juego</mat-label>
-        <input matInput placeholder="Doom" />
+        <input formControlName="nombre" matInput placeholder="Doom" />
       </mat-form-field>
 
-      <mat-form-field class="w-auto">
+      <mat-form-field class="">
         <mat-label>Año de lanzamiento</mat-label>
-        <input matInput placeholder="2001" />
+        <input formControlName="lanzamiento" matInput placeholder="2001" />
       </mat-form-field>
 
-      <mat-form-field class="w-auto">
+      <mat-form-field class="">
         <mat-label>Nombre de la empresa</mat-label>
-        <input matInput placeholder="Capcom" />
+        <input formControlName="empresa" matInput placeholder="Capcom" />
       </mat-form-field>
 
-      <mat-form-field class="w-auto">
+      <mat-form-field class="">
         <mat-label>Consola para la que se lanzó</mat-label>
-        <mat-select multiple>
+        <mat-select multiple formControlName="consolasCompatibles">
           <mat-option *ngFor="let consola of consolas; track consola" [value]="consola">
             {{consola}}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
-      <button mat-button>Enviar</button>
+      <button mat-button type="submit">Enviar</button>
 
     </form>
 
