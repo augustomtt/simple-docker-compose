@@ -1,18 +1,36 @@
-<section class="bg-black h-full w-full">
-  <form class="w-32">
-    <mat-form-field class="">
-      <mat-label>Nombre del juego</mat-label>
-      <input matInput placeholder="Nombre del juego" />
-    </mat-form-field>
+<div class="relative bg-black w-full h-full ">
+  <div class="absolute top-28 left-28">
+    <form class="w-32">
+      <mat-form-field class="">
+        <mat-label>Nombre del juego</mat-label>
+        <input matInput placeholder="Doom" />
+      </mat-form-field>
 
-    <mat-form-field class="w-auto">
-      <mat-label>
-        Año de lanzamiento
-      </mat-label>
-      <input matInput placeholder="Año de lanzamiento">
-    </mat-form-field>
+      <mat-form-field class="w-auto">
+        <mat-label>Año de lanzamiento</mat-label>
+        <input matInput placeholder="2001" />
+      </mat-form-field>
 
-    
+      <mat-form-field class="w-auto">
+        <mat-label>Nombre de la empresa</mat-label>
+        <input matInput placeholder="Capcom" />
+      </mat-form-field>
 
-  </form>
-</section>
+      <mat-form-field class="w-auto">
+        <mat-label>Consola para la que se lanzó</mat-label>
+        <mat-select multiple>
+          <mat-option *ngFor="let consola of consolas; track consola" [value]="consola">
+            {{consola}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button>Enviar</button>
+
+    </form>
+
+
+
+
+  </div>
+</div>
