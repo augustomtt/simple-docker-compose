@@ -9,7 +9,7 @@ const router = Router();
 router.use(cors());
 
 
-router.get('/api/juego', fetchJuegos);
-router.post('/api/juego', guardarNuevoJuego);
+router.get('/api/', fetchJuegos);
+router.post('/api/new', guardarNuevoJuego);
 
 export default router
