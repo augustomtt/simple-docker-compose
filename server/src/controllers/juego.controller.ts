@@ -21,7 +21,7 @@ export async function fetchJuegos(req: Request, res: Response) {
 export function guardarNuevoJuego(req: Request, res: Response) {
     const { body } = req;
     const hash = sha1(body)
-    body.id = hash;
+    body._id = hash;
 
     db.put(body).then((result: any) => {
         res.send(result);
