@@ -1,0 +1,9 @@
+services:
+  couchd:
+    restart: always
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: doom
+    image: couchdb:latest
+    ports:
+      - "666:5984"
