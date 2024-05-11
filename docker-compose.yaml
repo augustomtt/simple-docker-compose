@@ -1,5 +1,5 @@
 services:
-  couchd:
+  couchdb:
     restart: always
     environment:
       COUCHDB_USER: admin
@@ -12,3 +12,9 @@ services:
         context: ./front
     ports:
       - '4200:4200'
+  backend:
+    build:
+        context: ./server
+    ports:
+      - '3000:3000'
+    
