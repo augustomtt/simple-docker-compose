@@ -11,3 +11,5 @@ router.use(cors());
 
 router.get('/api/juego', fetchJuegos);
 router.post('/api/juego', guardarNuevoJuego);
+
+export default router
