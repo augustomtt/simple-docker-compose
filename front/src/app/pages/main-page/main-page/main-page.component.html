@@ -1,6 +1,10 @@
 <div class="relative bg-black w-full h-full">
-  <div class="absolute top-28 left-28 flex flex-row">
-    <form [formGroup]="juegoForm" (ngSubmit)="onSubmit()">
+  <div class="absolute top-28 left-28 grid-cols-2 w-2/3">
+    <form
+      [formGroup]="juegoForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col min-w-48 min-h-96 justify-between"
+    >
       <mat-form-field class="">
         <mat-label>Nombre del juego</mat-label>
         <input formControlName="nombre" matInput placeholder="Doom" />
@@ -19,18 +23,27 @@
       <mat-form-field class="">
         <mat-label>Consola para la que se lanzó</mat-label>
         <mat-select multiple formControlName="consolasCompatibles">
-          <mat-option *ngFor="let consola of consolas; track consola" [value]="consola">
-            {{consola}}
+          <mat-option
+            *ngFor="let consola of consolas; track: consola"
+            [value]="consola"
+          >
+            {{ consola }}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
-      <button mat-button type="submit">Enviar</button>
-
+      <button mat-button type="submit" class="text-black">Enviar</button>
     </form>
 
-
-
-
+    <div class="flex flex-row flex-wrap">
+      <mat-list *ngFor="let juego of juegos">
+        <mat-list-item>
+          <span matListItemTitle class="">{{ juego.name }}</span>
+          <span matListItemLine>{{ juego.lanzamiento }}</span>
+          <span matListItemLine>{{ juego.empresa }}</span>
+          <span matListItemLine class="flex flex-wrap">{{ juego.consolasLanzamiento }}</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
 </div>

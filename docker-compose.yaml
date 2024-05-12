@@ -6,7 +6,7 @@ services:
       COUCHDB_PASSWORD: doom
     image: couchdb:latest
     ports:
-      - "666:5984"
+      - "5984:5984"
   angular_front:
     build:
         context: ./front
