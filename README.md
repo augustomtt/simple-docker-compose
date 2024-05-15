@@ -3,7 +3,7 @@
 Docker Compose is a tool for defining and running multi-container applications. 
 In this repository you will find a 3 working services architecture, which include:
 - A **CouchDB** database.
-- A simple web interface using **Angular CLI**.
+- A simple web interface using **Angular**.
 - A server using **Express.js**.
 
 
