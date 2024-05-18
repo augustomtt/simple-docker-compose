@@ -5,6 +5,8 @@ services:
       COUCHDB_USER: admin
       COUCHDB_PASSWORD: doom
     image: couchdb:latest
+    volumes:
+      - couchdb_data:/var/couchdb
     ports:
       - "5984:5984"
   angular_front:
@@ -17,4 +19,5 @@ services:
         context: ./server
     ports:
       - '3000:3000'
-    
+volumes:
+   couchdb_data:
